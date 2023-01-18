@@ -43,6 +43,9 @@
 
 # ansible-playbook -i inv 02-vars.yml
 
+# For command line variable
+# ansible-playbook -i inv 02-vars.yml -e URL=cli.example.com
+
 - name: Access a fact
   hosts: all
   connection: local
@@ -52,3 +55,24 @@
         msg: Anisble Host name == {{ansible_fqdn}}
 
 # ansible-playbook -i inv 02-vars.yml -e URL=cli.example.com
+
+- name: Register a variable
+  hosts: all
+  connection: local
+  tasks:
+    - name: run a shell command
+      ansible.builtin.shell: uptime
+      register: out
+    - name: Print out
+      ansible.builtin.debug:
+        msg: "{{out}}"
+    - name: Print out
+      ansible.builtin.debug:
+        msg: print out without double quotes {{out}}
+
+    - name: Print out stdout
+      ansible.builtin.debug:
+        msg: "{{out.stdout}}"
+    - name: Set a fact
+      ansible.builtin.set_fact:
+        OUTPUT: "{{out.stdout}}"
