@@ -73,7 +73,7 @@
 
     - name: Print out with double quotes
       ansible.builtin.debug:
-        msg: "print out without double quotes {{out}}"
+        msg: "print out double quotes {{out}}"
 
     - name: Print out stdout
       ansible.builtin.debug:
