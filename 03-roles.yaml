@@ -3,3 +3,5 @@
   connection: local
   roles:
     - demo
+
+# ansible-playbook -i inv 03-roles.yaml
