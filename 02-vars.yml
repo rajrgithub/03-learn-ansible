@@ -7,7 +7,6 @@
     - name: Access a variable
       ansible.builtin.debug:
         msg: URL == {{URL}}
----
 
 - name: Declare variable at Tasks level
   hosts: all
