@@ -63,12 +63,17 @@
     - name: run a shell command
       ansible.builtin.shell: uptime
       register: out
-    - name: Print out
+    - name: Print out - Use Double quotes if value starts with variable
       ansible.builtin.debug:
         msg: "{{out}}"
-    - name: Print out
+
+    - name: Print out without double quotes
       ansible.builtin.debug:
         msg: print out without double quotes {{out}}
+
+    - name: Print out with double quotes
+      ansible.builtin.debug:
+        msg: "print out without double quotes {{out}}"
 
     - name: Print out stdout
       ansible.builtin.debug:
