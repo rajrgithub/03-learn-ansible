@@ -21,4 +21,4 @@
 # ansible-playbook -i localhost, 04-loops.yml
 
 # OR Use --connection=local in command
-# ansible-playbook -i localhost, 04-loops.yml
+# ansible-playbook -i localhost, 04-loops.yml --connection=local
