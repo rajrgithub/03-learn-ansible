@@ -5,3 +5,8 @@
     - debug:
         msg: "{{ lookup('aws_ssm', 'test', region='us-east-1' ) }}"
 
+# If hosts: all is added in play
+# ansible-playbook -i localhost, 06-parameter-store.yml
+
+# If hosts: localhost is added in play
+# ansible-playbook 06-parameter-store.yml
